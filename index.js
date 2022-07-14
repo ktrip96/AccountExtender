@@ -8,8 +8,10 @@ const app = express()
 app.use(express.json())
 
 // Routes
-const home = require('./routes/home')
-app.use('/home', home)
+app.get('/', (req, res) => {
+  res.send('Welcome to Account Microservice.')
+})
+
 const login = require('./routes/login')
 app.use('/login', login)
 const renewal = require('./routes/renewal')
